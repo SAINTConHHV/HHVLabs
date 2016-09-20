@@ -4,4 +4,5 @@ pages:
 - Labs:
         - '2016':
                 - 'HackRF RC Car': 'walkthroughs/hackrf-rc-car.md'
+                - 'Software': 'software-2016.md'
 theme: readthedocs
