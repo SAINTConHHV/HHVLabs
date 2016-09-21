@@ -32,12 +32,12 @@
         },
         {
             "location": "/software-2016/",
-            "text": "Software used\n\n\nI was using Debian sid, other versions may suffice.\n\n\n\n\nbuild-essential (debian package)\n\n\ngqrx\n (debian package)\n\n\ninspectrum\n (build from git, debian was too old)\n\n\nliquid-dsp\n (build from git, not in debian)\n\n\ncmake (debian package)\n\n\n\n\n\n\nrf-car\n (build from git, not in debian)\n\n\nlibsdl2-image-dev (debian package)\n\n\nlibhackrf-dev (debian packages)",
+            "text": "Software used\n\n\nI was using Debian sid, other versions may suffice.\n\n\n\n\nbuild-essential (debian package)\n\n\ngqrx\n (debian package)\n\n\ninspectrum\n (build from git, debian was too old)\n\n\ncmake (debian package)\n\n\nqt5-default (debian package)\n\n\npkg-config (debian package)\n\n\nliquid-dsp\n (build from git, not in debian)\n\n\n\n\n\n\nrf-car\n (build from git, not in debian)\n\n\nlibsdl2-image-dev (debian package)\n\n\nlibhackrf-dev (debian packages)",
             "title": "Software"
         },
         {
             "location": "/software-2016/#software-used",
-            "text": "I was using Debian sid, other versions may suffice.   build-essential (debian package)  gqrx  (debian package)  inspectrum  (build from git, debian was too old)  liquid-dsp  (build from git, not in debian)  cmake (debian package)    rf-car  (build from git, not in debian)  libsdl2-image-dev (debian package)  libhackrf-dev (debian packages)",
+            "text": "I was using Debian sid, other versions may suffice.   build-essential (debian package)  gqrx  (debian package)  inspectrum  (build from git, debian was too old)  cmake (debian package)  qt5-default (debian package)  pkg-config (debian package)  liquid-dsp  (build from git, not in debian)    rf-car  (build from git, not in debian)  libsdl2-image-dev (debian package)  libhackrf-dev (debian packages)",
             "title": "Software used"
         }
     ]
