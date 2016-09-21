@@ -1,6 +1,6 @@
 language: python
 install:
-  - pip install mkdocs mkdocs_bootswatch mkdocs_bootgrid
+  - pip install mkdocs mkdocs_bootswatch mkdocs_bootstrap
 script:
   - mkdocs build
 after_success:
