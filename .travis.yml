@@ -7,6 +7,7 @@ after_success:
   - >-
     git remote add gh_deploy
     "https://${GH_TOKEN}@github.com/SAINTConHHV/HHVLabs"
+  - git remote update
   - ./mkdocs_deploy.sh
   - git checkout gh-pages
   - git status
