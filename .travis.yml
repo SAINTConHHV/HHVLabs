@@ -7,7 +7,7 @@ after_success:
   - >-
     git remote add gh_deploy
     "https://${GH_TOKEN}@github.com/SAINTConHHV/HHVLabs"
-  - mkdocs_deploy.sh
+  - ./mkdocs_deploy.sh
 env:
   global:
     - secure: >-
