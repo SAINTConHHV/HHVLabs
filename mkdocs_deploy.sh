@@ -10,5 +10,5 @@ if [ "$TRAVIS_EVENT_TYPE" != "push" ]; then
 	exit 0
 fi
 
-exec mkdocs gh-deploy -r gh_deploy -m "build for $TRAVIS_REPO_SLUG/$TRAVIS_COMMIT (travis job: $TRAVIS_JOB_NUMBER)"
+exec mkdocs gh-deploy --clean -r gh_deploy -m "build for $TRAVIS_REPO_SLUG/$TRAVIS_COMMIT (travis job: $TRAVIS_JOB_NUMBER)"
 
