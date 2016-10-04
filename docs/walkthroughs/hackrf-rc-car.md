@@ -3,6 +3,9 @@
 ### Goals
 
 ### Required Software
+* [gqrx](/software-2016/#gqrx)
+* [inspectrum](/software-2016/#inspectrum)
+* [rf-car](/software-2016/#rf-car)
 
 ### Walkthrough
 

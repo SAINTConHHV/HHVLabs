@@ -4,19 +4,12 @@
 ### Required Software
 ### Walkthrough
 #### Install Software
-
-```sh
-apt-get install p7zip git build-essential libreadline5 libreadline-dev gcc-arm-none-eabi libusb-0.1-4 libusb-dev ncurses-dev perl pkg-config wget
-git clone https://github.com/Proxmark/proxmark3.git
-cd proxmark3
-make client
-
-cd client
-```
+See installation instructions at [proxmark3](/software-2016/#proxmark3)
 
 #### Start Client
 
 ```
+cd proxmark3/client
 $ ./proxmark3 /dev/ttyACM0
 proxmark3> hw tune
 
@@ -811,7 +804,6 @@ proxmark3> hf mf rdbl 0 a ffffffffffff
 isOk:00          
 
 ```
-
 
 
 ### Challenge

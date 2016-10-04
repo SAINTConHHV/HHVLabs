@@ -5,7 +5,7 @@
 ### Background Information
 
 ### Required Software
-[Package Name](http://package.example/page)
+See [Package Name](/software-2016/#package-name) for installation instructions.
 
 ### Walkthrough
 
