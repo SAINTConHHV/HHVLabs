@@ -67,7 +67,19 @@
         
             
 <li >
+    <a href="../walkthroughs/ads-b/">ADS-B with adstoolbox</a>
+</li>
+
+        
+            
+<li >
     <a href="../walkthroughs/hackrf-rc-car/">HackRF RC Car</a>
+</li>
+
+        
+            
+<li >
+    <a href="../walkthroughs/proxmark/">Proxmark Introduction</a>
 </li>
 
         
@@ -95,7 +107,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../walkthroughs/hackrf-rc-car/">
+                    <a rel="next" href="../walkthroughs/proxmark/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -116,6 +128,10 @@
     
         <li class="main active"><a href="#software-used">Software used</a></li>
         
+            <li><a href="#gqrx">gqrx</a></li>
+        
+            <li><a href="#inspectrum">[inspectrum]</a></li>
+        
     
     </ul>
 </div></div>
@@ -123,19 +139,55 @@
 
 <h3 id="software-used">Software used</h3>
 <p>I was using Debian sid, other versions may suffice.</p>
+<h4 id="gqrx"><a href="#gqrx">gqrx</a></h4>
+<p><a href="https://gqrx.dk">gqrx website</a> - install from debian package</p>
+<pre><code>apt-get install gqrx
+</code></pre>
+
+<h4 id="inspectrum">[inspectrum]</h4>
+<p><a href="https://github.com/miek/inspectrum">inspectrum website</a> - build from <a href="https://github.com/miek/inspectrum.git">git</a>, version in debian (0.1.6) was too old to find symbol rate</p>
+<h5 id="dependencies">dependencies</h5>
+<pre><code>1. cmake (debian package)
+1. qt5-default (debian package)
+1. pkg-config (debian package)
+1. [liquid-dsp](https://github.com/jgaeddert/liquid-dsp) - build from [git](https://github.com/jgaeddert/liquid-dsp.git), not in debian
+</code></pre>
+<h5 id="install">install</h5>
+<pre><code>apt-get install build-essential qt5-default pkg-config
+git clone https://github.com/jgaeddert/liquid-dsp.git
+cd liquid-dsp.git
+cmake
+sudo cmake install
+# my system had the wrong perms in /usr/local/...
+chmod a+r /usr/local/lib/*liquid*
+chmod -R a+rX /usr/local/include/liquid
+
+cd ..
+git clone https://github.com/miek/inspectrum.git
+cd inspectrum
+cmake
+sudo cmake install
+# my system had the wrong perms in /usr/local/...
+chmod a+rx /usr/local/bin/inspectrum
+
+</code></pre>
+
 <ol>
-<li>build-essential (debian package)</li>
-<li><a href="https://gqrx.dk">gqrx</a> (debian package)</li>
-<li><a href="https://github.com/miek/inspectrum">inspectrum</a> (build from git, debian was too old)<ol>
-<li>cmake (debian package)</li>
-<li>qt5-default (debian package)</li>
-<li>pkg-config (debian package)</li>
-<li><a href="https://github.com/jgaeddert/liquid-dsp">liquid-dsp</a> (build from git, not in debian)</li>
-</ol>
-</li>
-<li><a href="https://github.com/rgerganov/rf-car">rf-car</a> (build from git, not in debian)<ol>
+<li><a href="https://github.com/rgerganov/rf-car">rf-car</a> (build from <a href="https://github.com/rgerganov/rf-car.git">git</a>, not in debian)<ol>
 <li>libsdl2-image-dev (debian package)</li>
 <li>libhackrf-dev (debian packages)</li>
+</ol>
+</li>
+<li><a href="http://www.rtl-sdr.com/adsbox-new-ads-b-decoding-software-for-linux/">adsbox</a> (build from <a href="http://diseqc.alh.org.ua/projects/hard/adsb/adsbox-20160617.tar.gz">source</a>)<ol>
+<li>sqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)</li>
+<li>other headers?</li>
+</ol>
+</li>
+<li><a href="https://github.com/Proxmark/proxmark3">proxmark3</a> (build from <a href="https://github.com/Proxmark/proxmark3.git">git</a>)<ol>
+<li>libreadline-dev</li>
+<li>gcc-arm-none-eabi</li>
+<li>libusb-dev</li>
+<li>ncurses-dev</li>
 </ol>
 </li>
 </ol></div>

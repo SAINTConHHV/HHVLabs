@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>HHVLabs</title>
+	<title>ADS-B with adstoolbox - HHVLabs</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">HHVLabs</a>
+            <a class="navbar-brand" href="../..">HHVLabs</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -50,13 +50,13 @@
             <ul class="nav navbar-nav">
             
             
-                <li class="active">
-                    <a href=".">Home</a>
+                <li >
+                    <a href="../..">Home</a>
                 </li>
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Labs <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -66,26 +66,26 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="walkthroughs/ads-b/">ADS-B with adstoolbox</a>
+<li class="active">
+    <a href="./">ADS-B with adstoolbox</a>
 </li>
 
         
             
 <li >
-    <a href="walkthroughs/hackrf-rc-car/">HackRF RC Car</a>
+    <a href="../hackrf-rc-car/">HackRF RC Car</a>
 </li>
 
         
             
 <li >
-    <a href="walkthroughs/proxmark/">Proxmark Introduction</a>
+    <a href="../proxmark/">Proxmark Introduction</a>
 </li>
 
         
             
 <li >
-    <a href="software-2016/">Software</a>
+    <a href="../../software-2016/">Software</a>
 </li>
 
         
@@ -106,13 +106,13 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="../..">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="walkthroughs/ads-b/">
+                    <a rel="prev" href="../hackrf-rc-car/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -126,20 +126,53 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#saintcon-hhv-labs-2016">SAINTCON HHV Labs 2016</a></li>
+        <li class="main active"><a href="#ads-b-with-adsbox">ADS-B with adsbox</a></li>
+        
+            <li><a href="#goals">Goals</a></li>
+        
+            <li><a href="#background-information">Background Information</a></li>
+        
+            <li><a href="#required-software">Required Software</a></li>
+        
+            <li><a href="#walkthrough">Walkthrough</a></li>
+        
+            <li><a href="#challenge">Challenge</a></li>
+        
+            <li><a href="#additional-information">Additional information</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h3 id="saintcon-hhv-labs-2016">SAINTCON HHV Labs 2016</h3>
+<h2 id="ads-b-with-adsbox">ADS-B with adsbox</h2>
+<h3 id="goals">Goals</h3>
+<p>In this lab, you will see one of the applications for software defined radio.
+You will use ADSBox software along with an RTL-SDR dongle to track airplanes
+currently flying overhead by decoding their
+<a href="https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast">ADS-B</a>
+beacons.  The software will tune the radio, decode the beacon and plot plane
+location on a map.</p>
+<h3 id="background-information">Background Information</h3>
+<p><a href="https://en.wikipedia.org/wiki/Software-defined_radio">Software defined radio</a> takes the processing of radio signals out of hardware and moves it to software.  This makes it possible to decode and process many different radio protocols with a single receiver.  <a href="http://www.rtl-sdr.com/about-rtl-sdr/">RTL-SDR</a> is a SDR solution that leverages a cheap (~$30) digital TV-tuner and can tune into signals from 22MHz - 2.2GHz (varies depending on the specific dongle you purchase).</p>
+<h3 id="required-software">Required Software</h3>
 <ul>
-<li><a href="walkthroughs/hackrf-rc-car/">HackRF RC Car</a></li>
-<li><a href="walkthroughs/ads-b/">ADS-B</a></li>
-<li><a href="walkthroughs/proxmark/">proxmark</a></li>
+<li><a href="../../software-2016/#adsbox">adsbox</a></li>
 </ul>
-<p>Add some links here...</p></div>
+<h3 id="walkthrough">Walkthrough</h3>
+<h4 id="install-adsbox">Install adsbox</h4>
+<p>See <a href="../../software-2016/#adsbox">software page</a></p>
+<h4 id="run-adsbox">Run adsbox</h4>
+<pre><code>cd adsbox
+./adsbox --rtlsdr
+</code></pre>
+
+<p>Open web browser, go to http://127.0.0.1:8080</p>
+<h3 id="challenge">Challenge</h3>
+<h3 id="additional-information">Additional information</h3>
+<p><a href="http://diseqc.alh.org.ua/projects/hard/adsb/index.html">ADSBox homepage</a>(<a href="https://translate.google.com/translate?hl=en&amp;sl=auto&amp;tl=en&amp;u=http%3A%2F%2Fdiseqc.alh.org.ua%2Fprojects%2Fhard%2Fadsb%2Findex.html">google translate</a>) - <a href="http://www.rtl-sdr.com/adsbox-new-ads-b-decoding-software-for-linux/">English instruction page</a></p>
+<h4 id="additional-tools">Additional tools</h4>
+<p><a href="https://flightaware.com/">FlightAware</a> and <a href="https://www.flightradar24.com/">flightradar24</a> are ADS-B tracking sites driven by community data.  You can setup a system (pi, whatever) to receive broadcasts and share that data through these services.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -148,12 +181,12 @@
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
