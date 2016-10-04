@@ -155,7 +155,11 @@ frequency.</p>
 <p>To find your frequency, press and hold one of the controls on the remote and see if you see it appear in the waterfall display.  If you click in the waterfall display, it will tune to that frequency.  To get a better view of your current frequency, go to the FFT Settings tab on the right panel and increase the zoom.</p>
 <h4 id="how-does-this-thing-work">How does this thing work?</h4>
 <p>Now that you know the frequency, you can get a capture of the output from your remote.  Go to Tools -&gt; I/Q Recorder and record a sample.  From here, you could just replay the recorded sample and control your car.</p>
-<p>Now, let's get a closer look.  Let's open the file in <a href="https://github.com/miek/inspectrum">inspectrum</a>.  Run <code>inspectrum &lt;path/to/file.raw&gt;</code>.</p></div>
+<p>Now, let's get a closer look.  Let's open the file in <a href="https://github.com/miek/inspectrum">inspectrum</a>.  Run <code>inspectrum &lt;path/to/file.raw&gt;</code>.  The vertical axis is frequency relative to the center frequency, the horizontal axis is time.  Scroll to the right until you find your signal.  Notice that the signal is not continuous.  Zoom in so you can comfortably see where the gaps are.  Now, check the 'enable cursors' box and highlight a gap.  Now, increase the number of symbols and adjust the end to get a more accurate measurement.  Here is how mine looked:</p>
+<p><img alt="inspectrum - rf control signal" src="../inspectrum-rf-signal.jpg" /></p>
+<p>In this example, the symbol rate is 1875 symbols/second, each symbol taking 533 microseconds.</p>
+<p>If you are really ambitious, from this point you can now reverse-engineer the protocol (ie. see what the pattern is for each of the controls).  It would be a really good learning experience for you.  To save time, however, we will look at the end result from someone who has done it for us.</p>
+<p>Run <code>rf-car -f &lt;determined_frequency_in_hz&gt;</code>.  The default frequency is 40684300 which is around 40.7 MHz.</p></div>
         </div>
 
         <footer class="col-md-12">
