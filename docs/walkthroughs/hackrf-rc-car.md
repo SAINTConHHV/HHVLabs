@@ -39,7 +39,15 @@ To find your frequency, press and hold one of the controls on the remote and see
 
 Now that you know the frequency, you can get a capture of the output from your remote.  Go to Tools -> I/Q Recorder and record a sample.  From here, you could just replay the recorded sample and control your car.
 
-Now, let's get a closer look.  Let's open the file in [inspectrum](https://github.com/miek/inspectrum).  Run `inspectrum <path/to/file.raw>`.
+Now, let's get a closer look.  Let's open the file in [inspectrum](https://github.com/miek/inspectrum).  Run `inspectrum <path/to/file.raw>`.  The vertical axis is frequency relative to the center frequency, the horizontal axis is time.  Scroll to the right until you find your signal.  Notice that the signal is not continuous.  Zoom in so you can comfortably see where the gaps are.  Now, check the 'enable cursors' box and highlight a gap.  Now, increase the number of symbols and adjust the end to get a more accurate measurement.  Here is how mine looked:
+
+![inspectrum - rf control signal](inspectrum-rf-signal.jpg)
+
+In this example, the symbol rate is 1875 symbols/second, each symbol taking 533 microseconds.
+
+If you are really ambitious, from this point you can now reverse-engineer the protocol (ie. see what the pattern is for each of the controls).  It would be a really good learning experience for you.  To save time, however, we will look at the end result from someone who has done it for us.
+
+Run `rf-car -f <determined_frequency_in_hz>`.  The default frequency is 40684300 which is around 40.7 MHz.
 
 
 
