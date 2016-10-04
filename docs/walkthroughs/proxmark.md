@@ -1,8 +1,9 @@
-=== Goals ===
-=== Background Info ===
-=== Required Software ===
-=== Walkthrough ===
-==== Install Software ====
+## Proxmark Introduction
+### Goals
+### Background Information
+### Required Software
+### Walkthrough
+#### Install Software
 
 ```sh
 apt-get install p7zip git build-essential libreadline5 libreadline-dev gcc-arm-none-eabi libusb-0.1-4 libusb-dev ncurses-dev perl pkg-config wget
@@ -13,7 +14,7 @@ make client
 cd client
 ```
 
-==== Start Client ===
+#### Start Client
 
 ```
 $ ./proxmark3 /dev/ttyACM0
@@ -813,8 +814,7 @@ isOk:00
 
 
 
-=== Challenge ===
+### Challenge
 
-Where can I get more information?
-
+### Additional Information
 

@@ -1,4 +1,10 @@
-### Controlling RC Car with HackRF
+## Controlling an RC Car with HackRF
+
+### Goals
+
+### Required Software
+
+### Walkthrough
 
 #### What's the Frequency, Kenneth?
 
@@ -11,8 +17,8 @@ Once you have an idea of where it runs, we need the exact frequency.  I used
 [gqrx](gqrx.dk), since is relatively simple and included in debian-based
 distributions.
 
-Make sure the HackRF is plugged in to a USB port with lights on, then run `gqrx
--e` (the `-e` means you want to edit settings).
+Make sure the HackRF is plugged in to a USB port with lights on, then run
+`gqrx -e` (the `-e` means you want to edit settings).
 
 ![gqrx - Configure I/O devices](gqrx-configure-io.png)
 
@@ -49,5 +55,7 @@ If you are really ambitious, from this point you can now reverse-engineer the pr
 
 Run `rf-car -f <determined_frequency_in_hz>`.  The default frequency is 40684300 which is around 40.7 MHz.
 
+### Challenge
 
+### Additional Information
 
