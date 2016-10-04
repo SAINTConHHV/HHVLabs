@@ -3,6 +3,8 @@ pages:
 - Home: 'index.md'
 - Labs:
         - '2016':
+                - 'ADS-B with adstoolbox': 'walkthroughs/ads-b.md'
                 - 'HackRF RC Car': 'walkthroughs/hackrf-rc-car.md'
+                - 'Proxmark Introduction': 'walkthroughs/proxmark.md'
                 - 'Software': 'software-2016.md'
 theme: slate
