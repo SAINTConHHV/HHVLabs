@@ -130,7 +130,11 @@
         
             <li><a href="#gqrx">gqrx</a></li>
         
-            <li><a href="#inspectrum">[inspectrum]</a></li>
+            <li><a href="#inspectrum">inspectrum</a></li>
+        
+            <li><a href="#rf-car">rf-car</a></li>
+        
+            <li><a href="#adsbox">adsbox</a></li>
         
     
     </ul>
@@ -139,12 +143,13 @@
 
 <h3 id="software-used">Software used</h3>
 <p>I was using Debian sid, other versions may suffice.</p>
-<h4 id="gqrx"><a href="#gqrx">gqrx</a></h4>
+<h4 id="gqrx">gqrx</h4>
 <p><a href="https://gqrx.dk">gqrx website</a> - install from debian package</p>
+<h5 id="install">install</h5>
 <pre><code>apt-get install gqrx
 </code></pre>
 
-<h4 id="inspectrum">[inspectrum]</h4>
+<h4 id="inspectrum">inspectrum</h4>
 <p><a href="https://github.com/miek/inspectrum">inspectrum website</a> - build from <a href="https://github.com/miek/inspectrum.git">git</a>, version in debian (0.1.6) was too old to find symbol rate</p>
 <h5 id="dependencies">dependencies</h5>
 <pre><code>1. cmake (debian package)
@@ -152,7 +157,7 @@
 1. pkg-config (debian package)
 1. [liquid-dsp](https://github.com/jgaeddert/liquid-dsp) - build from [git](https://github.com/jgaeddert/liquid-dsp.git), not in debian
 </code></pre>
-<h5 id="install">install</h5>
+<h5 id="install_1">install</h5>
 <pre><code>apt-get install build-essential qt5-default pkg-config
 git clone https://github.com/jgaeddert/liquid-dsp.git
 cd liquid-dsp.git
@@ -172,25 +177,52 @@ chmod a+rx /usr/local/bin/inspectrum
 
 </code></pre>
 
-<ol>
-<li><a href="https://github.com/rgerganov/rf-car">rf-car</a> (build from <a href="https://github.com/rgerganov/rf-car.git">git</a>, not in debian)<ol>
-<li>libsdl2-image-dev (debian package)</li>
-<li>libhackrf-dev (debian packages)</li>
-</ol>
-</li>
-<li><a href="http://www.rtl-sdr.com/adsbox-new-ads-b-decoding-software-for-linux/">adsbox</a> (build from <a href="http://diseqc.alh.org.ua/projects/hard/adsb/adsbox-20160617.tar.gz">source</a>)<ol>
-<li>sqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)</li>
-<li>other headers?</li>
-</ol>
-</li>
-<li><a href="https://github.com/Proxmark/proxmark3">proxmark3</a> (build from <a href="https://github.com/Proxmark/proxmark3.git">git</a>)<ol>
-<li>libreadline-dev</li>
-<li>gcc-arm-none-eabi</li>
-<li>libusb-dev</li>
-<li>ncurses-dev</li>
-</ol>
-</li>
-</ol></div>
+<h4 id="rf-car">rf-car</h4>
+<p><a href="https://github.com/rgerganov/rf-car">rf-car website</a> (build from <a href="https://github.com/rgerganov/rf-car.git">git</a>, not in debian)</p>
+<h5 id="dependencies_1">dependencies</h5>
+<pre><code>1. libsdl2-image-dev (debian package)
+1. libhackrf-dev (debian packages)
+</code></pre>
+<h5 id="install_2">install</h5>
+<pre><code>apt-get install libsdl2-image-dev libhackrf-dev
+git clone https://github.com/rgerganov/rf-car.git
+cd rf-car
+make
+sudo make install
+</code></pre>
+
+<h4 id="adsbox">adsbox</h4>
+<p><a href="http://www.rtl-sdr.com/adsbox-new-ads-b-decoding-software-for-linux/">adsbox instructions</a> (build from <a href="http://diseqc.alh.org.ua/projects/hard/adsb/adsbox-20160617.tar.gz">source</a>)</p>
+<p>See also: <a href="http://diseqc.alh.org.ua/projects/hard/adsb/index.html">adsbox homepage</a>(<a href="https://translate.google.com/translate?hl=en&amp;sl=auto&amp;tl=en&amp;u=http%3A%2F%2Fdiseqc.alh.org.ua%2Fprojects%2Fhard%2Fadsb%2Findex.html">google translate</a>)</p>
+<h5 id="dependencies_2">dependencies</h5>
+<pre><code>1. sqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)
+1. other headers?
+</code></pre>
+<h5 id="fixme-install">FIXME: install</h5>
+<pre><code>apt-get install sqlite3 libsqlite3-dev ???
+wget http://diseqc.alh.org.ua/projects/hard/adsb/adsbox-20160617.tar.gz
+tar -xvzf adsbox-20160617.tar.gz
+#wget https://www.sqlite.org/snapshot/sqlite-snapshot-201609270009.tar.gz
+#tar -xvzf ./sqlite-snapshot-201609270009.tar.gz
+#mv sqlite-snapshot-201609270009 sqlite3
+
+cd adsbox
+# We want to use RTL-SDR
+sed -i 's/WITH_RTLSDR = no/WITH_RTLSDR = yes/' ./Makefile
+make
+</code></pre>
+
+<h5 id="proxmark3">proxmark3</h5>
+<p><a href="https://github.com/Proxmark/proxmark3">proxmark3 website</a> (build from <a href="https://github.com/Proxmark/proxmark3.git">git</a>)
+    1. libreadline-dev
+    1. gcc-arm-none-eabi
+    1. libusb-dev
+    1. ncurses-dev</p>
+<pre><code>apt-get install p7zip git build-essential libreadline-dev gcc-arm-none-eabi libusb-dev ncurses-dev pkg-config wget
+git clone https://github.com/Proxmark/proxmark3.git
+cd proxmark3
+make client
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
