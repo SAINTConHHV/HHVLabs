@@ -114,18 +114,27 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#controlling-rc-car-with-hackrf">Controlling RC Car with HackRF</a></li>
+        <li class="main active"><a href="#controlling-an-rc-car-with-hackrf">Controlling an RC Car with HackRF</a></li>
         
-            <li><a href="#whats-the-frequency-kenneth">What's the Frequency, Kenneth?</a></li>
+            <li><a href="#goals">Goals</a></li>
         
-            <li><a href="#how-does-this-thing-work">How does this thing work?</a></li>
+            <li><a href="#required-software">Required Software</a></li>
+        
+            <li><a href="#walkthrough">Walkthrough</a></li>
+        
+            <li><a href="#challenge">Challenge</a></li>
+        
+            <li><a href="#additional-information">Additional Information</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h3 id="controlling-rc-car-with-hackrf">Controlling RC Car with HackRF</h3>
+<h2 id="controlling-an-rc-car-with-hackrf">Controlling an RC Car with HackRF</h2>
+<h3 id="goals">Goals</h3>
+<h3 id="required-software">Required Software</h3>
+<h3 id="walkthrough">Walkthrough</h3>
 <h4 id="whats-the-frequency-kenneth">What's the Frequency, Kenneth?</h4>
 <p>The first thing we need to know is what frequency your chosen rf car uses.
 Some devices will have a label to get you close.  Another option would be to
@@ -134,8 +143,8 @@ the band it runs in.</p>
 <p>Once you have an idea of where it runs, we need the exact frequency.  I used
 <a href="../gqrx.dk">gqrx</a>, since is relatively simple and included in debian-based
 distributions.</p>
-<p>Make sure the HackRF is plugged in to a USB port with lights on, then run <code>gqrx
--e</code> (the <code>-e</code> means you want to edit settings).</p>
+<p>Make sure the HackRF is plugged in to a USB port with lights on, then run
+<code>gqrx -e</code> (the <code>-e</code> means you want to edit settings).</p>
 <p><img alt="gqrx - Configure I/O devices" src="../gqrx-configure-io.png" /></p>
 <ol>
 <li>In the Device field, choose the HackRF</li>
@@ -159,7 +168,9 @@ frequency.</p>
 <p><img alt="inspectrum - rf control signal" src="../inspectrum-rf-signal.jpg" /></p>
 <p>In this example, the symbol rate is 1875 symbols/second, each symbol taking 533 microseconds.</p>
 <p>If you are really ambitious, from this point you can now reverse-engineer the protocol (ie. see what the pattern is for each of the controls).  It would be a really good learning experience for you.  To save time, however, we will look at the end result from someone who has done it for us.</p>
-<p>Run <code>rf-car -f &lt;determined_frequency_in_hz&gt;</code>.  The default frequency is 40684300 which is around 40.7 MHz.</p></div>
+<p>Run <code>rf-car -f &lt;determined_frequency_in_hz&gt;</code>.  The default frequency is 40684300 which is around 40.7 MHz.</p>
+<h3 id="challenge">Challenge</h3>
+<h3 id="additional-information">Additional Information</h3></div>
         </div>
 
         <footer class="col-md-12">
