@@ -4,6 +4,7 @@ import pyudev
 import os
 import sys
 from termcolor import cprint
+import hashlib
 
 ESPTOOL_PATH = "/home/esk/src/esptool"
 sys.path.append(ESPTOOL_PATH)
@@ -61,15 +62,22 @@ if __name__ == "__main__":
         flash_manuf = flash_id & 0xff
         flash_device = (flash_id & 0xff00) | (flash_id >> 16 & 0xff)
 
+        link_hash = hashlib.sha256()
+        link_hash.update(flash_id)
+        link_hash.update(mac)
+        link_code = link_hash.hexdigest()[-12].upper()
+
         dev_data = {
             'mac': mac,
             'chip_id': chip_id,
             'flash_id': "manuf={0:02x},dev={1:04x}".format(flash_manuf, flash_device),
+            'link_code': link_code,
         }
 
         del esp
 
-        cprint('mac: {mac} chip_id: {chip_id} flash_id: {flash_id}'.format(**dev_data), 'cyan')
+        cprint('mac: {mac} chip_id: {chip_id} flash_id: {flash_id}\n'
+               'link_code/UUID: {link_code}'.format(**dev_data), 'cyan')
 
         cmd = FLASH_CMD.format(tty=device.properties['DEVNAME'], fwpath=FWPATH, args='')
 
