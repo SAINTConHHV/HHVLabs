@@ -162,7 +162,7 @@
         }, 
         {
             "location": "/software-2016/", 
-            "text": "Software used\n\n\nI was using Debian sid, other versions may suffice.\n\n\ngqrx\n\n\ngqrx website\n - install from debian package\n\n\ninstall\n\n\napt-get install gqrx\n\n\n\n\ninspectrum\n\n\ninspectrum website\n - build from \ngit\n, version in debian (0.1.6) was too old to find symbol rate\n\n\ndependencies\n\n\n1. cmake (debian package)\n1. qt5-default (debian package)\n1. pkg-config (debian package)\n1. [liquid-dsp](https://github.com/jgaeddert/liquid-dsp) - build from [git](https://github.com/jgaeddert/liquid-dsp.git), not in debian\n\n\n\ninstall\n\n\napt-get install build-essential qt5-default pkg-config\ngit clone https://github.com/jgaeddert/liquid-dsp.git\ncd liquid-dsp.git\ncmake\nsudo cmake install\n# my system had the wrong perms in /usr/local/...\nchmod a+r /usr/local/lib/*liquid*\nchmod -R a+rX /usr/local/include/liquid\n\ncd ..\ngit clone https://github.com/miek/inspectrum.git\ncd inspectrum\ncmake\nsudo cmake install\n# my system had the wrong perms in /usr/local/...\nchmod a+rx /usr/local/bin/inspectrum\n\n\n\n\n\nrf-car\n\n\nrf-car website\n (build from \ngit\n, not in debian)\n\n\ndependencies\n\n\n1. libsdl2-image-dev (debian package)\n1. libhackrf-dev (debian packages)\n\n\n\ninstall\n\n\napt-get install libsdl2-image-dev libhackrf-dev\ngit clone https://github.com/rgerganov/rf-car.git\ncd rf-car\nmake\nsudo make install\n\n\n\n\nadsbox\n\n\nadsbox instructions\n (build from \nsource\n)\n\n\nSee also: \nadsbox homepage\n(\ngoogle translate\n)\n\n\ndependencies\n\n\n1. sqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)\n1. other headers?\n\n\n\nFIXME: install\n\n\napt-get install sqlite3 libsqlite3-dev ???\nwget http://diseqc.alh.org.ua/projects/hard/adsb/adsbox-20160617.tar.gz\ntar -xvzf adsbox-20160617.tar.gz\n#wget https://www.sqlite.org/snapshot/sqlite-snapshot-201609270009.tar.gz\n#tar -xvzf ./sqlite-snapshot-201609270009.tar.gz\n#mv sqlite-snapshot-201609270009 sqlite3\n\ncd adsbox\n# We want to use RTL-SDR\nsed -i 's/WITH_RTLSDR = no/WITH_RTLSDR = yes/' ./Makefile\nmake\n\n\n\n\nproxmark3\n\n\nproxmark3 website\n (build from \ngit\n)\n    1. libreadline-dev\n    1. gcc-arm-none-eabi\n    1. libusb-dev\n    1. ncurses-dev\n\n\napt-get install p7zip git build-essential libreadline-dev gcc-arm-none-eabi libusb-dev ncurses-dev pkg-config wget\ngit clone https://github.com/Proxmark/proxmark3.git\ncd proxmark3\nmake client", 
+            "text": "Software used\n\n\nI was using Debian sid, other versions may suffice.\n\n\ngqrx\n\n\ngqrx website\n - install from debian package\n\n\ninstall\n\n\napt-get install gqrx\n\n\n\n\ninspectrum\n\n\ninspectrum website\n - build from \ngit\n, version in debian (0.1.6) was too old to find symbol rate\n\n\ndependencies\n\n\n\n\ncmake (debian package)\n\n\nqt5-default (debian package)\n\n\npkg-config (debian package)\n\n\nliquid-dsp\n - build from \ngit\n, not in debian\n\n\n\n\ninstall\n\n\napt-get install build-essential qt5-default pkg-config\ngit clone https://github.com/jgaeddert/liquid-dsp.git\ncd liquid-dsp.git\ncmake\nsudo cmake install\n# my system had the wrong perms in /usr/local/...\nchmod a+r /usr/local/lib/*liquid*\nchmod -R a+rX /usr/local/include/liquid\n\ncd ..\ngit clone https://github.com/miek/inspectrum.git\ncd inspectrum\ncmake\nsudo cmake install\n# my system had the wrong perms in /usr/local/...\nchmod a+rx /usr/local/bin/inspectrum\n\n\n\n\n\nrf-car\n\n\nrf-car website\n (build from \ngit\n, not in debian)\n\n\ndependencies\n\n\n\n\nlibsdl2-image-dev (debian package)\n\n\nlibhackrf-dev (debian packages)\n\n\n\n\ninstall\n\n\napt-get install libsdl2-image-dev libhackrf-dev\ngit clone https://github.com/rgerganov/rf-car.git\ncd rf-car\nmake\nsudo make install\n\n\n\n\nadsbox\n\n\nadsbox instructions\n (build from \nsource\n)\n\n\nSee also: \nadsbox homepage\n(\ngoogle translate\n)\n\n\ndependencies\n\n\n\n\nsqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)\n\n\nother headers?\n\n\n\n\nFIXME: install\n\n\napt-get install sqlite3 libsqlite3-dev ???\nwget http://diseqc.alh.org.ua/projects/hard/adsb/adsbox-20160617.tar.gz\ntar -xvzf adsbox-20160617.tar.gz\n#wget https://www.sqlite.org/snapshot/sqlite-snapshot-201609270009.tar.gz\n#tar -xvzf ./sqlite-snapshot-201609270009.tar.gz\n#mv sqlite-snapshot-201609270009 sqlite3\n\ncd adsbox\n# We want to use RTL-SDR\nsed -i 's/WITH_RTLSDR = no/WITH_RTLSDR = yes/' ./Makefile\nmake\n\n\n\n\nproxmark3\n\n\nproxmark3 website\n (build from \ngit\n)\n\n\ndependencies\n\n\n\n\nlibreadline-dev\n\n\ngcc-arm-none-eabi\n\n\nlibusb-dev\n\n\nncurses-dev\n\n\n\n\ninstall\n\n\napt-get install p7zip git build-essential libreadline-dev gcc-arm-none-eabi libusb-dev ncurses-dev pkg-config wget\ngit clone https://github.com/Proxmark/proxmark3.git\ncd proxmark3\nmake client", 
             "title": "Software"
         }, 
         {
@@ -187,7 +187,7 @@
         }, 
         {
             "location": "/software-2016/#dependencies", 
-            "text": "1. cmake (debian package)\n1. qt5-default (debian package)\n1. pkg-config (debian package)\n1. [liquid-dsp](https://github.com/jgaeddert/liquid-dsp) - build from [git](https://github.com/jgaeddert/liquid-dsp.git), not in debian", 
+            "text": "cmake (debian package)  qt5-default (debian package)  pkg-config (debian package)  liquid-dsp  - build from  git , not in debian", 
             "title": "dependencies"
         }, 
         {
@@ -202,7 +202,7 @@
         }, 
         {
             "location": "/software-2016/#dependencies_1", 
-            "text": "1. libsdl2-image-dev (debian package)\n1. libhackrf-dev (debian packages)", 
+            "text": "libsdl2-image-dev (debian package)  libhackrf-dev (debian packages)", 
             "title": "dependencies"
         }, 
         {
@@ -217,7 +217,7 @@
         }, 
         {
             "location": "/software-2016/#dependencies_2", 
-            "text": "1. sqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)\n1. other headers?", 
+            "text": "sqlite3-dev ? (walkthrough says to install sqlite3 from source, is this necessary?)  other headers?", 
             "title": "dependencies"
         }, 
         {
@@ -227,8 +227,18 @@
         }, 
         {
             "location": "/software-2016/#proxmark3", 
-            "text": "proxmark3 website  (build from  git )\n    1. libreadline-dev\n    1. gcc-arm-none-eabi\n    1. libusb-dev\n    1. ncurses-dev  apt-get install p7zip git build-essential libreadline-dev gcc-arm-none-eabi libusb-dev ncurses-dev pkg-config wget\ngit clone https://github.com/Proxmark/proxmark3.git\ncd proxmark3\nmake client", 
+            "text": "proxmark3 website  (build from  git )", 
             "title": "proxmark3"
+        }, 
+        {
+            "location": "/software-2016/#dependencies_3", 
+            "text": "libreadline-dev  gcc-arm-none-eabi  libusb-dev  ncurses-dev", 
+            "title": "dependencies"
+        }, 
+        {
+            "location": "/software-2016/#install_3", 
+            "text": "apt-get install p7zip git build-essential libreadline-dev gcc-arm-none-eabi libusb-dev ncurses-dev pkg-config wget\ngit clone https://github.com/Proxmark/proxmark3.git\ncd proxmark3\nmake client", 
+            "title": "install"
         }
     ]
 }
