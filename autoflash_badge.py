@@ -7,15 +7,21 @@ from termcolor import cprint
 import hashlib
 
 ESPTOOL_PATH = "/home/esk/src/esptool"
+#FWPATH = "/home/esk/src/SaintCon2016Badge/build_artifacts/images/saintcon_nodemcu_spiffs_master-ddb0aa83a1ecdab880360c8e7cce6407c90cb75d.bin"
+FWPATH = "latest-spiffs.bin"
+FWURL = "https://badger.saintcon.org/master/images/latest-spiffs.bin"
+
 sys.path.append(ESPTOOL_PATH)
 import esptool
 
 BAUD = 230400
-FWPATH = "/home/esk/src/SaintCon2016Badge/build_artifacts/images/saintcon_nodemcu_spiffs_master-ddb0aa83a1ecdab880360c8e7cce6407c90cb75d.bin"
 # FLASH_CMD = "time esptool -cd nodemcu -cp {tty} -cb 1500000 -cf {fwpath}"
-FLASH_CMD = "time ~/src/esptool/esptool.py --port {tty} --baud 1500000 write_flash --verify -fm dio -fs 32m 0x00000 {fwpath}"
-ESPTOOL = "~/src/esptool/esptool.py --port {tty} {command}"
+esptool = os.path.join(ESPTOOL_PATH, 'esptool.py')
+ESPTOOL = "{} --port {{tty}} {{command}}".format(esptool)
+FLASH_CMD = ("time {} --port {{tty}} --baud 1500000 write_flash --verify "
+             "-fm dio -fs 32m 0x00000 {{fwpath}}".format(esptool))
 
+FWUPDATE_CMD = "wget -N -O {FWPATH} {FWURL}".format(FWPATH=FWPATH, FWURL=FWURL)
 
 class UdevHandler(object):
     def __init__(self):
@@ -78,6 +84,11 @@ if __name__ == "__main__":
 
         cprint('mac: {mac} chip_id: {chip_id} flash_id: {flash_id}\n'
                'link_code/UUID: {link_code}'.format(**dev_data), 'cyan')
+
+        cprint("Checking for newer firmware...", 'green')
+        ret = os.system(FWUPDATE_CMD)
+        if ret:
+            cprint("Error downloading newer firmware!", 'red')
 
         cmd = FLASH_CMD.format(tty=device.properties['DEVNAME'], fwpath=FWPATH, args='')
 
