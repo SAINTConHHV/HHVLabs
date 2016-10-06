@@ -69,7 +69,7 @@ if __name__ == "__main__":
         flash_device = (flash_id & 0xff00) | (flash_id >> 16 & 0xff)
 
         link_hash = hashlib.sha256()
-        link_hash.update(flash_id)
+        link_hash.update(str(flash_id))
         link_hash.update(mac)
         link_code = link_hash.hexdigest()[-12].upper()
 
