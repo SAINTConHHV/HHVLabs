@@ -9,8 +9,12 @@ RUN apt-get update && apt-get install -y \
   python-pyudev \
   && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade termcolor esptool pyudev
+
 WORKDIR /usr/src/app
 
 COPY autoflash_badge.py ./
 
-CMD autoflash_badge.py
+ENV INITSYSTEM on
+
+CMD ["python", "autoflash_badge.py"]
