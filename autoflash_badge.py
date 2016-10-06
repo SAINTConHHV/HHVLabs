@@ -71,7 +71,7 @@ if __name__ == "__main__":
         link_hash = hashlib.sha256()
         link_hash.update(str(flash_id))
         link_hash.update(mac)
-        link_code = link_hash.hexdigest()[-12].upper()
+        link_code = link_hash.hexdigest()[-12:].upper()
 
         dev_data = {
             'mac': mac,
