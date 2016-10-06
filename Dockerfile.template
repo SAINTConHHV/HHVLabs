@@ -1,0 +1,16 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-python
+
+# Install wget and curl
+RUN apt-get update && apt-get install -y \
+  wget \
+  curl && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y \
+  python-pyudev \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src/app
+
+COPY autoflash_badge.py ./
+
+CMD autoflash_badge.py
