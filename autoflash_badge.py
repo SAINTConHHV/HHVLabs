@@ -11,7 +11,9 @@ ESPTOOL_PATH = "/home/esk/src/esptool"
 FWPATH = "latest-spiffs.bin"
 FWURL = "https://badger.saintcon.org/master/images/latest-spiffs.bin"
 
-sys.path.append(ESPTOOL_PATH)
+if ESPTOOL_PATH:
+	sys.path.append(ESPTOOL_PATH)
+
 import esptool
 
 BAUD = 230400
@@ -101,3 +103,6 @@ if __name__ == "__main__":
             cprint("Flash failed with {0}".format(ret), "red")
         else:
             cprint("Flash succeeded.", "green")
+
+        cprint('mac: {mac} chip_id: {chip_id} flash_id: {flash_id}\n'
+               'link_code/UUID: {link_code}'.format(**dev_data), 'cyan')
