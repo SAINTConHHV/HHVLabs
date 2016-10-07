@@ -172,15 +172,27 @@
 <h3 id="delete-the-rest">Delete the rest</h3>
 <p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Useful markdown reference</a> (github-flavor, mkdocs can have subtle differences)</p>
 <p>Some examples to see how they actually render in this environment:</p>
-<p>list:
-    * item 1
-    * item 2
-        * nested list item 1
-        * etc</p>
-<pre><code>1. item 1
-    2. subitem 1
-</code></pre>
-<p>Note that github is more forgiving on indentation, the following doesn't work with mkdocs:
+<p>list (note the blank line before the first item and the multiple of 4-spaces for indentation, mkdocs can be picky):</p>
+<ul>
+<li>item 1</li>
+<li>
+<p>item 2</p>
+<ul>
+<li>nested list item 1<ul>
+<li>etc</li>
+</ul>
+</li>
+<li>etc</li>
+</ul>
+</li>
+<li>
+<p>item 1</p>
+<ol>
+<li>subitem 1</li>
+</ol>
+</li>
+</ul>
+<p>Note that github is more forgiving, the following doesn't work with mkdocs:
  1. item a
  1. item b
  1. item c
