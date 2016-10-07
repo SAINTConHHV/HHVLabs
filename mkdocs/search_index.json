@@ -274,6 +274,61 @@
             "location": "/software-2016/#install_3", 
             "text": "apt-get install p7zip git build-essential libreadline-dev gcc-arm-none-eabi libusb-dev ncurses-dev pkg-config wget\ngit clone https://github.com/Proxmark/proxmark3.git\ncd proxmark3\nmake client", 
             "title": "install"
+        }, 
+        {
+            "location": "/walkthroughs/template/", 
+            "text": "Name for this walkthrough\n\n\nGoals\n\n\nBackground Information\n\n\nRequired Software\n\n\nSee \nPackage Name\n for installation instructions.\n\n\nWalkthrough\n\n\nwhat to do first\n\n\nwhat to do next\n\n\nChallenge\n\n\nAdditional Information\n\n\nDelete the rest\n\n\nUseful markdown reference\n (github-flavor, mkdocs can have subtle differences)\n\n\nSome examples to see how they actually render in this environment:\n\n\nlist:\n\n item 1\n\n item 2\n    * nested list item 1\n    * etc\n\n\na. item a\na. item b\nf. item c\n    1. item 1\n    2. item 2\n    1. item 3\n\n\nimages/links:\n\n\n\n\nlink text\n\n\n[https://site.example/link/target] -- not sure if this does anything\n\n\n(https://site.example/link/target) -- or this\n\n\nhttps://site.example/link/target\n -- or this\n\n\nCommands, etc:\n\n\nyou can do them inline, for example \ncat /proc/cpuinfo\n\n\nyou can do blocks:\n\n\n#!/usr/bin/env python\n\ndef main():\n    print \nHello world!\n\n\nif __name__ == '__main__':\n    main()", 
+            "title": "deleteme"
+        }, 
+        {
+            "location": "/walkthroughs/template/#name-for-this-walkthrough", 
+            "text": "", 
+            "title": "Name for this walkthrough"
+        }, 
+        {
+            "location": "/walkthroughs/template/#goals", 
+            "text": "", 
+            "title": "Goals"
+        }, 
+        {
+            "location": "/walkthroughs/template/#background-information", 
+            "text": "", 
+            "title": "Background Information"
+        }, 
+        {
+            "location": "/walkthroughs/template/#required-software", 
+            "text": "See  Package Name  for installation instructions.", 
+            "title": "Required Software"
+        }, 
+        {
+            "location": "/walkthroughs/template/#walkthrough", 
+            "text": "", 
+            "title": "Walkthrough"
+        }, 
+        {
+            "location": "/walkthroughs/template/#what-to-do-first", 
+            "text": "", 
+            "title": "what to do first"
+        }, 
+        {
+            "location": "/walkthroughs/template/#what-to-do-next", 
+            "text": "", 
+            "title": "what to do next"
+        }, 
+        {
+            "location": "/walkthroughs/template/#challenge", 
+            "text": "", 
+            "title": "Challenge"
+        }, 
+        {
+            "location": "/walkthroughs/template/#additional-information", 
+            "text": "", 
+            "title": "Additional Information"
+        }, 
+        {
+            "location": "/walkthroughs/template/#delete-the-rest", 
+            "text": "Useful markdown reference  (github-flavor, mkdocs can have subtle differences)  Some examples to see how they actually render in this environment:  list:  item 1  item 2\n    * nested list item 1\n    * etc  a. item a\na. item b\nf. item c\n    1. item 1\n    2. item 2\n    1. item 3  images/links:   link text  [https://site.example/link/target] -- not sure if this does anything  (https://site.example/link/target) -- or this  https://site.example/link/target  -- or this  Commands, etc:  you can do them inline, for example  cat /proc/cpuinfo  you can do blocks:  #!/usr/bin/env python\n\ndef main():\n    print  Hello world! \n\nif __name__ == '__main__':\n    main()", 
+            "title": "Delete the rest"
         }
     ]
 }
