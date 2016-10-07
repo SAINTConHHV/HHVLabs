@@ -23,16 +23,18 @@ See [Package Name](/software-2016/#package-name) for installation instructions.
 
 Some examples to see how they actually render in this environment:
 
-list:
-    * item 1
-    * item 2
-        * nested list item 1
+list (note the blank line before the first item and the multiple of 4-spaces for indentation, mkdocs can be picky):
+
+* item 1
+* item 2
+    * nested list item 1
         * etc
+    * etc
 
-    1. item 1
-        2. subitem 1
+1. item 1
+    2. subitem 1
 
-Note that github is more forgiving on indentation, the following doesn't work with mkdocs:
+Note that github is more forgiving, the following doesn't work with mkdocs:
  1. item a
  1. item b
  1. item c
