@@ -25,13 +25,13 @@ Some examples to see how they actually render in this environment:
 
 list (note the blank line before the first item and the multiple of 4-spaces for indentation, mkdocs can be picky):
 
-* item 1
-* item 2
-    * nested list item 1
+* bullet 1
+* bullet 2
+    * nested bullet item 1
         * etc
     * etc
 
-1. item 1
+1. bullet 3 with mkdocs ?, numbered 1 with github
     2. subitem 1
 
 Note that github is more forgiving, the following doesn't work with mkdocs:
@@ -44,7 +44,7 @@ Note that github is more forgiving, the following doesn't work with mkdocs:
 
 images/links:
 
-![example image alt text](pineapple-login.md)
+![example image alt text](pineapple-login.png)
 
 [link text](https://site.example/link/target)
 
