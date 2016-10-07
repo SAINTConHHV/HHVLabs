@@ -24,14 +24,14 @@ See [Package Name](/software-2016/#package-name) for installation instructions.
 Some examples to see how they actually render in this environment:
 
 list:
-* item 1
-* item 2
+ * item 1
+ * item 2
     * nested list item 1
     * etc
 
-a. item a
-a. item b
-f. item c
+ a. item a
+ a. item b
+ f. item c
     1. item 1
     2. item 2
     1. item 3
