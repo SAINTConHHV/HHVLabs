@@ -15,7 +15,7 @@ Evil Portal Module for wifi pineapple
 
 Plug in the Wifi Pineapple to the raspberry pi/laptop/whatever.
 
-Then go to http://172.16.42.1:1471
+Then go to [http://172.16.42.1:1471](http://172.16.42.1:1471)
 
 ![Pineapple - Login](pineapple-login.png)
 
