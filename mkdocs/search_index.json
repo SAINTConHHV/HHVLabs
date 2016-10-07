@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "SAINTCON HHV Labs 2016\n\n\n\n\nHackRF RC Car\n\n\nADS-B\n\n\nproxmark\n\n\n\n\nAdd some links here...", 
+            "text": "SAINTCON HHV Labs 2016\n\n\n\n\nHackRF RC Car\n\n\nADS-B\n\n\nproxmark\n\n\nRogue Captive Portal\n\n\n\n\nAdd some links here...", 
             "title": "Home"
         }, 
         {
             "location": "/#saintcon-hhv-labs-2016", 
-            "text": "HackRF RC Car  ADS-B  proxmark   Add some links here...", 
+            "text": "HackRF RC Car  ADS-B  proxmark  Rogue Captive Portal   Add some links here...", 
             "title": "SAINTCON HHV Labs 2016"
         }, 
         {
@@ -158,6 +158,41 @@
         {
             "location": "/walkthroughs/proxmark/#additional-information", 
             "text": "", 
+            "title": "Additional Information"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/", 
+            "text": "Setting up a Rogue AP with a Captive Portal\n\n\nby Nathan Smith\n\n\nGoals\n\n\nIn this lab we will show one of the many uses that the wifi pineapples have. This will show you how you would set up a rogue access point with a captive portal.\n\n\nBackground Information\n\n\nRogue access points are defined as a \u201cwireless \naccess point\n that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker.\u201d\n\n\nRequired Software\n\n\nEvil Portal Module for wifi pineapple\n\n\nWalkthrough\n\n\n\n\nPlug in the Wifi Pineapple to the raspberry pi/laptop/whatever. \n\n\nThen go to http://172.16.42.1:1471\n    \n\n\nOnce at the login screen you will use:\n    a. User: \nroot\n\n    b. Password: \nS@in7c0nR0ck$!\n\n\nSelect the \nNetworking\n option on the left hand side \n    \n\n\nSet the AP key to \n3viLP0rt@l!\n\n\nUncheck \nDisable Management AP\n and select Update Access Point.\n\n\nNow expand the \nModules\n section on the left hand side of the page. \n    \n\n\nSelect \nEvil Portal\n.\n\n\nOn the workbench type in Saint then select \nCreate New Portal\n. \n    \n\n\nYou will now see Saint in the list of portals. Select \nActivate\n. (If you don\u2019t see your portal, refresh the page.) \n    \n\n\nNow we will select \nLive Preview\n. Select the \nRefresh\n button. \n    \n\n\nConnect a device to your newly set up \nP1N3 AP\n and you can see your captive portal. \n\n\n\n\nGo back to the \nNetworking\n section.\n    \n\n\nCheck the box next to \nDisable Management AP\n and select \nUpdate Access Point\n.\n\n\n\n\nAdditional Information\n\n\nCheck out the \npineapple forums\n\n\nGreat links on Custom Captive Portals:\n\n \nCustom NoDogSplash / Evil Portal Landing Page\n\n\n \nCreating a Simple Captive Portal for Evil Portal", 
+            "title": "Rogue Captive Portal"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/#setting-up-a-rogue-ap-with-a-captive-portal", 
+            "text": "by Nathan Smith", 
+            "title": "Setting up a Rogue AP with a Captive Portal"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/#goals", 
+            "text": "In this lab we will show one of the many uses that the wifi pineapples have. This will show you how you would set up a rogue access point with a captive portal.", 
+            "title": "Goals"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/#background-information", 
+            "text": "Rogue access points are defined as a \u201cwireless  access point  that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker.\u201d", 
+            "title": "Background Information"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/#required-software", 
+            "text": "Evil Portal Module for wifi pineapple", 
+            "title": "Required Software"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/#walkthrough", 
+            "text": "Plug in the Wifi Pineapple to the raspberry pi/laptop/whatever.   Then go to http://172.16.42.1:1471\n      Once at the login screen you will use:\n    a. User:  root \n    b. Password:  S@in7c0nR0ck$!  Select the  Networking  option on the left hand side \n      Set the AP key to  3viLP0rt@l!  Uncheck  Disable Management AP  and select Update Access Point.  Now expand the  Modules  section on the left hand side of the page. \n      Select  Evil Portal .  On the workbench type in Saint then select  Create New Portal . \n      You will now see Saint in the list of portals. Select  Activate . (If you don\u2019t see your portal, refresh the page.) \n      Now we will select  Live Preview . Select the  Refresh  button. \n      Connect a device to your newly set up  P1N3 AP  and you can see your captive portal.    Go back to the  Networking  section.\n      Check the box next to  Disable Management AP  and select  Update Access Point .", 
+            "title": "Walkthrough"
+        }, 
+        {
+            "location": "/walkthroughs/pineapple-captive-portal/#additional-information", 
+            "text": "Check out the  pineapple forums  Great links on Custom Captive Portals:   Custom NoDogSplash / Evil Portal Landing Page    Creating a Simple Captive Portal for Evil Portal", 
             "title": "Additional Information"
         }, 
         {

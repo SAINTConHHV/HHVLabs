@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>ADS-B with adstoolbox - HHVLabs</title>
+	<title>Rogue Captive Portal - HHVLabs</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -66,8 +66,8 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">ADS-B with adstoolbox</a>
+<li >
+    <a href="../ads-b/">ADS-B with adstoolbox</a>
 </li>
 
         
@@ -84,8 +84,8 @@
 
         
             
-<li >
-    <a href="../pineapple-captive-portal/">Rogue Captive Portal</a>
+<li class="active">
+    <a href="./">Rogue Captive Portal</a>
 </li>
 
         
@@ -113,12 +113,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../..">
+                    <a rel="next" href="../proxmark/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../hackrf-rc-car/">
+                    <a rel="prev" href="../../software-2016/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -132,7 +132,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#ads-b-with-adsbox">ADS-B with adsbox</a></li>
+        <li class="main active"><a href="#setting-up-a-rogue-ap-with-a-captive-portal">Setting up a Rogue AP with a Captive Portal</a></li>
         
             <li><a href="#goals">Goals</a></li>
         
@@ -142,43 +142,53 @@
         
             <li><a href="#walkthrough">Walkthrough</a></li>
         
-            <li><a href="#challenge">Challenge</a></li>
-        
-            <li><a href="#additional-information">Additional information</a></li>
+            <li><a href="#additional-information">Additional Information</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="ads-b-with-adsbox">ADS-B with adsbox</h2>
+<h2 id="setting-up-a-rogue-ap-with-a-captive-portal">Setting up a Rogue AP with a Captive Portal</h2>
+<p>by Nathan Smith</p>
 <h3 id="goals">Goals</h3>
-<p>In this lab, you will see one of the applications for software defined radio.
-You will use ADSBox software along with an RTL-SDR dongle to track airplanes
-currently flying overhead by decoding their
-<a href="https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast">ADS-B</a>
-beacons.  The software will tune the radio, decode the beacon and plot plane
-location on a map.</p>
+<p>In this lab we will show one of the many uses that the wifi pineapples have. This will show you how you would set up a rogue access point with a captive portal.</p>
 <h3 id="background-information">Background Information</h3>
-<p><a href="https://en.wikipedia.org/wiki/Software-defined_radio">Software defined radio</a> takes the processing of radio signals out of hardware and moves it to software.  This makes it possible to decode and process many different radio protocols with a single receiver.  <a href="http://www.rtl-sdr.com/about-rtl-sdr/">RTL-SDR</a> is a SDR solution that leverages a cheap (~$30) digital TV-tuner and can tune into signals from 22MHz - 2.2GHz (varies depending on the specific dongle you purchase).</p>
+<p>Rogue access points are defined as a “wireless <strong>access point</strong> that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker.”</p>
 <h3 id="required-software">Required Software</h3>
-<ul>
-<li><a href="../../software-2016/#adsbox">adsbox</a></li>
-</ul>
+<p>Evil Portal Module for wifi pineapple</p>
 <h3 id="walkthrough">Walkthrough</h3>
-<h4 id="install-adsbox">Install adsbox</h4>
-<p>See <a href="../../software-2016/#adsbox">software page</a></p>
-<h4 id="run-adsbox">Run adsbox</h4>
-<pre><code>cd adsbox
-./adsbox --rtlsdr
-</code></pre>
-
-<p>Open web browser, go to http://127.0.0.1:8080</p>
-<h3 id="challenge">Challenge</h3>
-<h3 id="additional-information">Additional information</h3>
-<p><a href="http://diseqc.alh.org.ua/projects/hard/adsb/index.html">ADSBox homepage</a>(<a href="https://translate.google.com/translate?hl=en&amp;sl=auto&amp;tl=en&amp;u=http%3A%2F%2Fdiseqc.alh.org.ua%2Fprojects%2Fhard%2Fadsb%2Findex.html">google translate</a>) - <a href="http://www.rtl-sdr.com/adsbox-new-ads-b-decoding-software-for-linux/">English instruction page</a></p>
-<h4 id="additional-tools">Additional tools</h4>
-<p><a href="https://flightaware.com/">FlightAware</a> and <a href="https://www.flightradar24.com/">flightradar24</a> are ADS-B tracking sites driven by community data.  You can setup a system (pi, whatever) to receive broadcasts and share that data through these services.</p></div>
+<ol>
+<li>Plug in the Wifi Pineapple to the raspberry pi/laptop/whatever. </li>
+<li>Then go to http://172.16.42.1:1471
+    <img alt="Pineapple - Login" src="../pineapple-login.png" /></li>
+<li>Once at the login screen you will use:
+    a. User: <code>root</code>
+    b. Password: <code>S@in7c0nR0ck$!</code></li>
+<li>Select the <strong>Networking</strong> option on the left hand side 
+    <img alt="Pineapple - Access Points" src="../pineapple-access-points.png" /></li>
+<li>Set the AP key to <code>3viLP0rt@l!</code></li>
+<li>Uncheck <strong>Disable Management AP</strong> and select Update Access Point.</li>
+<li>Now expand the <strong>Modules</strong> section on the left hand side of the page. 
+    <img alt="Pineapple - Modules" src="../pineapple-modules.png" /></li>
+<li>Select <strong>Evil Portal</strong>.</li>
+<li>On the workbench type in Saint then select <strong>Create New Portal</strong>. 
+    <img alt="Pineapple - Workbench - Create New Portal" src="../pineapple-portal-workbench.png" /></li>
+<li>You will now see Saint in the list of portals. Select <strong>Activate</strong>. (If you don’t see your portal, refresh the page.) 
+    <img alt="Pineapple - Workbench - Activate" src="../pineapple-portal-activate.png" /></li>
+<li>Now we will select <strong>Live Preview</strong>. Select the <strong>Refresh</strong> button. 
+    <img alt="Pineapple - Workbench - Live Portal Preview" src="../pineapple-portal-preview.png" /></li>
+<li>Connect a device to your newly set up <code>P1N3 AP</code> and you can see your captive portal. <br />
+<img alt="Captive Portal from phone" src="../pineapple-portal-device.png" /></li>
+<li>Go back to the <strong>Networking</strong> section.
+    <img alt="Pineapple - Networking" src="../pineapple-portal-access-points.png" /></li>
+<li>Check the box next to <strong>Disable Management AP</strong> and select <strong>Update Access Point</strong>.</li>
+</ol>
+<h3 id="additional-information">Additional Information</h3>
+<p>Check out the <a href="https://forums.hak5.org/index.php?/forum/64-wifi-pineapple-jasager/">pineapple forums</a></p>
+<p>Great links on Custom Captive Portals:
+<em> <a href="https://forums.hak5.org/index.php?/topic/30730-share-my-custom-nodogsplash-evil-portal-landing-page/">Custom NoDogSplash / Evil Portal Landing Page</a>
+</em> <a href="https://forums.hak5.org/index.php?/topic/33576-howto-creating-a-simple-captive-portal-for-evil-portal/">Creating a Simple Captive Portal for Evil Portal</a></p></div>
         </div>
 
         <footer class="col-md-12">
