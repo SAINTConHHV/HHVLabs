@@ -6,7 +6,7 @@ import sys
 from termcolor import cprint
 import hashlib
 
-ESPTOOL_PATH = "/home/esk/src/esptool"
+ESPTOOL_PATH = ""
 #FWPATH = "/home/esk/src/SaintCon2016Badge/build_artifacts/images/saintcon_nodemcu_spiffs_master-ddb0aa83a1ecdab880360c8e7cce6407c90cb75d.bin"
 # Be sure FWPATH matches FWURL, as wget -N and -O don't get along
 FWPATH = "latest-spiffs.bin"
@@ -21,7 +21,7 @@ BAUD = 230400
 # FLASH_CMD = "time esptool -cd nodemcu -cp {tty} -cb 1500000 -cf {fwpath}"
 esptool_cmd = os.path.join(ESPTOOL_PATH, 'esptool.py')
 ESPTOOL = "{} --port {{tty}} {{command}}".format(esptool_cmd)
-FLASH_CMD = ("time {} --port {{tty}} --baud 1500000 write_flash --verify "
+FLASH_CMD = ("{} --port {{tty}} --baud 1500000 write_flash --verify "
              "-fm dio -fs 32m 0x00000 {{fwpath}}".format(esptool_cmd))
 
 FWUPDATE_CMD = "wget -N {FWURL}".format(FWURL=FWURL)
