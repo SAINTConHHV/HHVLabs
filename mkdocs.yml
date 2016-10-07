@@ -8,4 +8,5 @@ pages:
                 - 'Proxmark Introduction': 'walkthroughs/proxmark.md'
                 - 'Rogue Captive Portal': 'walkthroughs/pineapple-captive-portal.md'
                 - 'Software': 'software-2016.md'
+- deleteme: 'walkthroughs/template.md'
 theme: slate
