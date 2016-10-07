@@ -13,30 +13,51 @@ Evil Portal Module for wifi pineapple
 
 ### Walkthrough
 
-1. Plug in the Wifi Pineapple to the raspberry pi/laptop/whatever. 
-1. Then go to http://172.16.42.1:1471
-    ![Pineapple - Login](pineapple-login.png)
-1. Once at the login screen you will use:
-    a. User: `root`
-    b. Password: `S@in7c0nR0ck$!`
-1. Select the **Networking** option on the left hand side 
-    ![Pineapple - Access Points](pineapple-access-points.png)
-1. Set the AP key to `3viLP0rt@l!`
-1. Uncheck **Disable Management AP** and select Update Access Point.
-1. Now expand the **Modules** section on the left hand side of the page. 
-    ![Pineapple - Modules](pineapple-modules.png)
-1. Select **Evil Portal**.
-1. On the workbench type in Saint then select **Create New Portal**. 
-    ![Pineapple - Workbench - Create New Portal](pineapple-portal-workbench.png)
-1. You will now see Saint in the list of portals. Select **Activate**. (If you don’t see your portal, refresh the page.) 
-    ![Pineapple - Workbench - Activate](pineapple-portal-activate.png)
-1. Now we will select **Live Preview**. Select the **Refresh** button. 
-    ![Pineapple - Workbench - Live Portal Preview](pineapple-portal-preview.png)
-1. Connect a device to your newly set up `P1N3 AP` and you can see your captive portal.   
-    ![Captive Portal from phone](pineapple-portal-device.png)
-1. Go back to the **Networking** section.
-    ![Pineapple - Networking](pineapple-portal-access-points.png)
-1. Check the box next to **Disable Management AP** and select **Update Access Point**.
+Plug in the Wifi Pineapple to the raspberry pi/laptop/whatever.
+
+Then go to http://172.16.42.1:1471
+
+![Pineapple - Login](pineapple-login.png)
+
+Once at the login screen you will use:
+a. User: `root`
+b. Password: `S@in7c0nR0ck$!`
+
+Select the **Networking** option on the left hand side
+
+![Pineapple - Access Points](pineapple-access-points.png)
+
+Set the AP key to `3viLP0rt@l!`
+
+Uncheck **Disable Management AP** and select Update Access Point.
+
+Now expand the **Modules** section on the left hand side of the page.
+
+![Pineapple - Modules](pineapple-modules.png)
+
+Select **Evil Portal**.
+
+On the workbench type in Saint then select **Create New Portal**.
+
+![Pineapple - Workbench - Create New Portal](pineapple-portal-workbench.png)
+
+You will now see Saint in the list of portals. Select **Activate**. (If you don’t see your portal, refresh the page.)
+
+![Pineapple - Workbench - Activate](pineapple-portal-activate.png)
+
+Now we will select **Live Preview**. Select the **Refresh** button.
+
+![Pineapple - Workbench - Live Portal Preview](pineapple-portal-preview.png)
+
+Connect a device to your newly set up `P1N3 AP` and you can see your captive portal.
+
+![Captive Portal from phone](pineapple-portal-device.png)
+
+Go back to the **Networking** section.
+
+![Pineapple - Networking](pineapple-portal-access-points.png)
+
+Check the box next to **Disable Management AP** and select **Update Access Point**.
 
 ### Additional Information
 Check out the [pineapple forums](https://forums.hak5.org/index.php?/forum/64-wifi-pineapple-jasager/)
