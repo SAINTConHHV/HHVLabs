@@ -173,13 +173,17 @@
 <p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Useful markdown reference</a> (github-flavor, mkdocs can have subtle differences)</p>
 <p>Some examples to see how they actually render in this environment:</p>
 <p>list:
- * item 1
- * item 2
-    * nested list item 1
-    * etc</p>
-<p>a. item a
- a. item b
- f. item c
+    * item 1
+    * item 2
+        * nested list item 1
+        * etc</p>
+<pre><code>1. item 1
+    2. subitem 1
+</code></pre>
+<p>Note that github is more forgiving on indentation, the following doesn't work with mkdocs:
+ 1. item a
+ 1. item b
+ 1. item c
     1. item 1
     2. item 2
     1. item 3</p>
