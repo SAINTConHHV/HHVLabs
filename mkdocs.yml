@@ -6,5 +6,6 @@ pages:
                 - 'ADS-B with adstoolbox': 'walkthroughs/ads-b.md'
                 - 'HackRF RC Car': 'walkthroughs/hackrf-rc-car.md'
                 - 'Proxmark Introduction': 'walkthroughs/proxmark.md'
+                - 'Rogue Captive Portal': 'walkthroughs/pineapple-captive-portal.md'
                 - 'Software': 'software-2016.md'
 theme: slate
