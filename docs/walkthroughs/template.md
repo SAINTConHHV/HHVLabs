@@ -46,6 +46,10 @@ images/links:
 
 ![example image alt text](pineapple-login.png)
 
+maybe scaled (requires markdown.extensions.attr_list to be enabled):
+
+![example image alt text](pineapple-login.png){: width="129" height="109" }
+
 [link text](https://site.example/link/target)
 
 [https://site.example/link/target] -- not sure if this does anything
