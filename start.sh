@@ -7,5 +7,5 @@
 
 while true; do
     rm /tmp/.X0-lock &>/dev/null || true
-    startx -fullscreen -e python /usr/src/app/autoflash_badge.py
+    startx -fullscreen -fa 'Monospace' -fs 14 -rv -e python /usr/src/app/autoflash_badge.py
 done
