@@ -9,10 +9,13 @@ The RubberDucky comes in two parts. The Ducky itself and a MicroSD card. The Mic
 The Ducky reads a file from /inject.bin which is an encoded version of our payload.
 
 ### Required Software
+
 * git
 * python
 * [DuckToolkit](https://github.com/kevthehermit/DuckToolkit)
+
 ### Useful Software:
+
 * [Empire](https://github.com/adaptivethreat/Empire)
 * [EmPyre](https://github.com/adaptivethreat/EmPyre) (Dev branch as it includes a ducky stager)
 
@@ -20,6 +23,7 @@ The Ducky reads a file from /inject.bin which is an encoded version of our paylo
 ### Walkthrough
 
 #### Install git and python
+
 * See [git](/software-2016/#git) software page.
 * See [python](/software-2016/#python) software page.
 
@@ -27,6 +31,7 @@ The Ducky reads a file from /inject.bin which is an encoded version of our paylo
 `sudo pip install ducktoolkit`
 
 #### Writing your payload
+
 >Ducky Script is the language of the USB Rubber Ducky. Writing scripts for can be done from any common ascii text editor such as Notepad, vi, emacs, nano, gedit, kedit, TextEdit, etc.
 >
 >Ducky Script syntax is simple. Each command resides on a new line and may have options follow. Commands are written in ALL CAPS, because ducks are loud and like to quack with pride. Most commands invoke keystrokes, key-combos or strings of text, while some offer delays or pauses. Below is a list of commands and their function, followed by some example usage.
@@ -82,6 +87,7 @@ cd Empire/
 ```
 
 Follow [this video](https://www.youtube.com/watch?v=Xku4cSF42tY) to create the payload. The basic steps are:
+
 1. Create a Listener
 2. Create a Ducky Stager
 
@@ -112,5 +118,6 @@ Your challenge is to use EmPyre to create a payload for Mac.
 * [USBRubberDucky](http://usbrubberducky.com/)
 
 #### Additional tools
+
 * [Ducky Resources](http://usbrubberducky.com/#!resources.md) 
 * [Empire Presentations](https://www.powershellempire.com/?page_id=149)
