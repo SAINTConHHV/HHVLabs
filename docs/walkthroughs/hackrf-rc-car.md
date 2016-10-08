@@ -60,5 +60,8 @@ Run `rf-car -f <determined_frequency_in_hz>`.  The default frequency is 40684300
 
 ### Challenge
 
+Do you (or does someone near you) have a key fob for their car?  Your mission, should you choose to accept it, is to find the frequency and the symbol rate of the transmitter.
+
 ### Additional Information
 
+The [rf-car](https://github.com/rgerganov/rf-car) repo has a lot of interesting information, as does the [gr-remotecar](https://github.com/scateu/gr-remotecar) repo.  You could also try your favorite search engine.
