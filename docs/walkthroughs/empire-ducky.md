@@ -28,7 +28,7 @@ The Ducky reads a file from /inject.bin which is an encoded version of our paylo
 * See [python](/software-2016/#python) software page.
 
 #### Install DuckToolkit
-`sudo pip install ducktoolkit`
+`~$ sudo pip install ducktoolkit`
 
 #### Writing your payload
 
@@ -54,7 +54,7 @@ ENTER
 #### Encode your payload
 We'll be using the DuckToolkit to encode our `payload.txt` file. If you were unable to get it installed with pip, you can go ahead and build it from [source](https://github.com/kevthehermit/DuckToolkit). 
 ```
-ducktools.py -l us -e payload.txt inject.bin
+~$ ducktools.py -l us -e payload.txt inject.bin
 ```
 
 #### Deploy your payload
@@ -62,10 +62,10 @@ You'll need to plug in your MicroSD card to your machine. Find which device is m
 
 `fdisk -l` should help you identify which device is your MicroSD card.
 ```
-mkdir -p /mnt/duckysd
-mount /dev/sdb1 /mnt/duckysd
-cp inject.bin /mnt/duckysd/inject.bin
-umount /mnt/duckysd
+~$ mkdir -p /mnt/duckysd
+~$ mount /dev/sdb1 /mnt/duckysd
+~$ cp inject.bin /mnt/duckysd/inject.bin
+~$ umount /mnt/duckysd
 ```
 #### Profit
 Ok. You can now plug your MicroSD card into the ducky and test it on any Windows Machine.
@@ -80,10 +80,10 @@ We're going to try a more advanced payload.
 
 #### Start Empire
 ```
-git clone https://github.com/adaptivethreat/Empire
-cd Empire/
-./setup/install.sh
-./empire
+~$ git clone https://github.com/adaptivethreat/Empire
+~$ cd Empire/
+~$ ./setup/install.sh
+~$ ./empire
 ```
 
 Follow [this video](https://www.youtube.com/watch?v=Xku4cSF42tY) to create the payload. The basic steps are:
@@ -93,11 +93,11 @@ Follow [this video](https://www.youtube.com/watch?v=Xku4cSF42tY) to create the p
 
 Encode the Stager (OutFile) and copy the inject.bin to the MicroSD Card.
 ```
-ducktools.py -l us -e payload.txt inject.bin
-mkdir -p /mnt/duckysd
-mount /dev/sdb1 /mnt/duckysd
-cp inject.bin /mnt/duckysd/inject.bin
-umount /mnt/duckysd
+~$ ducktools.py -l us -e payload.txt inject.bin
+~$ mkdir -p /mnt/duckysd
+~$ mount /dev/sdb1 /mnt/duckysd
+~$ cp inject.bin /mnt/duckysd/inject.bin
+~$ umount /mnt/duckysd
 ```
 #### Profit
 Awesome. You can now plug your MicroSD card into the ducky and test it on any Windows Machine.
