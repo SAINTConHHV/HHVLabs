@@ -203,7 +203,7 @@ The Ducky reads a file from /inject.bin which is an encoded version of our paylo
 <li>See <a href="../../software-2016/#python">python</a> software page.</li>
 </ul>
 <h4 id="install-ducktoolkit">Install DuckToolkit</h4>
-<p><code>sudo pip install ducktoolkit</code></p>
+<p><code>~$ sudo pip install ducktoolkit</code></p>
 <h4 id="writing-your-payload">Writing your payload</h4>
 <blockquote>
 <p>Ducky Script is the language of the USB Rubber Ducky. Writing scripts for can be done from any common ascii text editor such as Notepad, vi, emacs, nano, gedit, kedit, TextEdit, etc.</p>
@@ -221,16 +221,16 @@ ENTER
 
 <h4 id="encode-your-payload">Encode your payload</h4>
 <p>We'll be using the DuckToolkit to encode our <code>payload.txt</code> file. If you were unable to get it installed with pip, you can go ahead and build it from <a href="https://github.com/kevthehermit/DuckToolkit">source</a>. </p>
-<pre><code>ducktools.py -l us -e payload.txt inject.bin
+<pre><code>~$ ducktools.py -l us -e payload.txt inject.bin
 </code></pre>
 
 <h4 id="deploy-your-payload">Deploy your payload</h4>
 <p>You'll need to plug in your MicroSD card to your machine. Find which device is mounted.</p>
 <p><code>fdisk -l</code> should help you identify which device is your MicroSD card.</p>
-<pre><code>mkdir -p /mnt/duckysd
-mount /dev/sdb1 /mnt/duckysd
-cp inject.bin /mnt/duckysd/inject.bin
-umount /mnt/duckysd
+<pre><code>~$ mkdir -p /mnt/duckysd
+~$ mount /dev/sdb1 /mnt/duckysd
+~$ cp inject.bin /mnt/duckysd/inject.bin
+~$ umount /mnt/duckysd
 </code></pre>
 
 <h4 id="profit">Profit</h4>
@@ -243,10 +243,10 @@ umount /mnt/duckysd
 <p>https://github.com/adaptivethreat/Empire</p>
 </blockquote>
 <h4 id="start-empire">Start Empire</h4>
-<pre><code>git clone https://github.com/adaptivethreat/Empire
-cd Empire/
-./setup/install.sh
-./empire
+<pre><code>~$ git clone https://github.com/adaptivethreat/Empire
+~$ cd Empire/
+~$ ./setup/install.sh
+~$ ./empire
 </code></pre>
 
 <p>Follow <a href="https://www.youtube.com/watch?v=Xku4cSF42tY">this video</a> to create the payload. The basic steps are:</p>
@@ -255,11 +255,11 @@ cd Empire/
 <li>Create a Ducky Stager</li>
 </ol>
 <p>Encode the Stager (OutFile) and copy the inject.bin to the MicroSD Card.</p>
-<pre><code>ducktools.py -l us -e payload.txt inject.bin
-mkdir -p /mnt/duckysd
-mount /dev/sdb1 /mnt/duckysd
-cp inject.bin /mnt/duckysd/inject.bin
-umount /mnt/duckysd
+<pre><code>~$ ducktools.py -l us -e payload.txt inject.bin
+~$ mkdir -p /mnt/duckysd
+~$ mount /dev/sdb1 /mnt/duckysd
+~$ cp inject.bin /mnt/duckysd/inject.bin
+~$ umount /mnt/duckysd
 </code></pre>
 
 <h4 id="profit_1">Profit</h4>
