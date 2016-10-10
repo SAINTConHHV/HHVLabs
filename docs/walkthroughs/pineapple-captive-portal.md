@@ -20,8 +20,8 @@ Then go to <http://172.16.42.1:1471>
 ![Pineapple - Login](img/pineapple-login.png)
 
 Once at the login screen you will use:
-a. User: `root`
-b. Password: `S@in7c0nR0ck$!`
+User: `root`
+Password: `S@in7c0nR0ck$!`
 
 Select the **Networking** option on the left hand side
 
@@ -64,6 +64,7 @@ Check out the [pineapple forums](https://forums.hak5.org/index.php?/forum/64-wif
 
 Great links on Custom Captive Portals:
 * [Custom NoDogSplash / Evil Portal Landing Page](https://forums.hak5.org/index.php?/topic/30730-share-my-custom-nodogsplash-evil-portal-landing-page/)
+
 * [Creating a Simple Captive Portal for Evil Portal](https://forums.hak5.org/index.php?/topic/33576-howto-creating-a-simple-captive-portal-for-evil-portal/)
 
 
