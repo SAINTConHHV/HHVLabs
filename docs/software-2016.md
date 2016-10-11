@@ -15,6 +15,7 @@ apt-get install gqrx
 1. cmake (debian package)
 1. qt5-default (debian package)
 1. pkg-config (debian package)
+1. libfftw3-dev (debian package)
 1. [liquid-dsp](https://github.com/jgaeddert/liquid-dsp) - build from [git](https://github.com/jgaeddert/liquid-dsp.git), not in debian
 
 #### install

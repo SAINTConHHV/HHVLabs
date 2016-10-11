@@ -8,11 +8,11 @@ pages:
 - Home: 'index.md'
 - Labs:
         - '2016':
-                - 'ADS-B with adstoolbox': 'walkthroughs/ads-b.md'
-                - 'Empire with a ducky': 'walkthroughs/empire-ducky.md'
-                - 'HackRF RC Car': 'walkthroughs/hackrf-rc-car.md'
-                - 'Proxmark Introduction': 'walkthroughs/proxmark.md'
-                - 'Rogue Captive Portal': 'walkthroughs/pineapple-captive-portal.md'
+                - 'rtl-sdr: ADS-B with adstoolbox': 'walkthroughs/ads-b.md'
+                - 'rubber ducky: Empire with a ducky': 'walkthroughs/empire-ducky.md'
+                - 'HackRF: RC Car': 'walkthroughs/hackrf-rc-car.md'
+                - 'Proxmark: Introduction': 'walkthroughs/proxmark.md'
+                - 'WiFi Pineapple: Rogue Captive Portal': 'walkthroughs/pineapple-captive-portal.md'
                 - 'Software': 'software-2016.md'
 - deleteme: 'walkthroughs/template.md'
 #theme: readthedocs
