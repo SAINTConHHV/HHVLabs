@@ -9,6 +9,7 @@ pages:
 - Labs:
         - '2016':
                 - 'rtl-sdr: ADS-B with adstoolbox': 'walkthroughs/ads-b.md'
+                - 'rtl-sdr: gqrx introduction': 'walkthroughs/gqrx-introduction.md'
                 - 'rubber ducky: Empire with a ducky': 'walkthroughs/empire-ducky.md'
                 - 'HackRF: RC Car': 'walkthroughs/hackrf-rc-car.md'
                 - 'Proxmark: Introduction': 'walkthroughs/proxmark.md'

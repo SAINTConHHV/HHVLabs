@@ -13,7 +13,7 @@ FWPATH = "latest-spiffs.bin"
 FWURL = "https://badger.saintcon.org/master/images/latest-spiffs.bin"
 
 if ESPTOOL_PATH:
-	sys.path.append(ESPTOOL_PATH)
+    sys.path.append(ESPTOOL_PATH)
 
 import esptool
 
@@ -33,14 +33,20 @@ class UdevHandler(object):
 
         # watch for TTY devices added via udev
         self.monitor.filter_by("tty")
+        self.monitor.start()
 
     def wait_for_device(self):
         poll = True
         while poll:
             device = self.monitor.poll()
+
+            devprops = device
+            if hasattr(device, 'properties'):
+                devprops = device.properties
+
             if (device.action == "add" and
-                    device.properties.get("ID_BUS") == "usb" and
-                    device.properties.get("ID_SERIAL") == u"1a86_USB2.0-Serial"):
+                    devprops.get("ID_BUS") == "usb" and
+                    devprops.get("ID_SERIAL") == u"1a86_USB2.0-Serial"):
                 # other checking here
                 return device
             print("ignoring event {} for device {} ({})".format(device.action, device.sys_name, device))
@@ -52,12 +58,16 @@ if __name__ == "__main__":
         cprint("Waiting for device", "green")
         device = handler.wait_for_device()
 
+        devprops = device
+        if hasattr(device, 'properties'):
+            devprops = device.properties
+
         cprint("New device added: {0}".format(device), "green")
         for field in ["DEVNAME", "ID_MODEL_ENC", "ID_USB_DRIVER", ]:
-            print(field, device.properties.get(field))
+            print(field, devprops.get(field))
 
         initial_baud = min(esptool.ESPROM.ESP_ROM_BAUD, BAUD)
-        esp = esptool.ESPROM(device.properties['DEVNAME'], initial_baud)
+        esp = esptool.ESPROM(devprops['DEVNAME'], initial_baud)
         esp.connect()
 
         mac = esp.read_mac()
@@ -93,7 +103,7 @@ if __name__ == "__main__":
         if ret:
             cprint("Error downloading newer firmware!", 'red')
 
-        cmd = FLASH_CMD.format(tty=device.properties['DEVNAME'], fwpath=FWPATH, args='')
+        cmd = FLASH_CMD.format(tty=devprops['DEVNAME'], fwpath=FWPATH, args='')
 
         cprint("Flash starting", "green")
         print("CMD: {0}".format(cmd))
