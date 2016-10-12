@@ -3,6 +3,7 @@
 import pyudev
 import os
 import sys
+import time
 from termcolor import cprint
 import hashlib
 
@@ -35,7 +36,7 @@ class UdevHandler(object):
         self.monitor.filter_by("tty")
         self.monitor.start()
 
-    def wait_for_device(self):
+    def wait_for_device(self, disconnect=False):
         poll = True
         while poll:
             device = self.monitor.poll()
@@ -44,7 +45,8 @@ class UdevHandler(object):
             if hasattr(device, 'properties'):
                 devprops = device.properties
 
-            if (device.action == "add" and
+            if ((device.action == "add" and not disconnect
+		 or device.action == "remove" and disconnect) and
                     devprops.get("ID_BUS") == "usb" and
                     devprops.get("ID_SERIAL") == u"1a86_USB2.0-Serial"):
                 # other checking here
@@ -117,3 +119,7 @@ if __name__ == "__main__":
 
         cprint('mac: {mac} chip_id: {chip_id} flash_id: {flash_id}\n'
                'link_code/UUID: {link_code}'.format(**dev_data), 'cyan')
+
+        cprint('waiting for disconnect', 'yellow')
+        handler.wait_for_device(disconnect=True)
+	time.sleep(2)
