@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "SAINTCON HHV Labs 2016\n\n\n\n\nHackRF: RC Car\n\n\nrubber ducky: Empire on a ducky\n\n\nrtl-sdr: ADS-B\n\n\nProxmark: Introduction\n\n\nWiFi Pineapple: Rogue Captive Portal\n\n\n\n\nAdd some links here...\n\ndeleteme", 
+            "text": "SAINTCON HHV Labs 2016\n\n\n\n\nHackRF: RC Car\n\n\nrubber ducky: Empire on a ducky\n\n\nrtl-sdr: ADS-B\n\n\nrtl-sdr: gqrx introduction\n\n\nProxmark: Introduction\n\n\nWiFi Pineapple: Rogue Captive Portal\n\n\n\n\nAdd some links here...\n\ndeleteme", 
             "title": "Home"
         }, 
         {
             "location": "/#saintcon-hhv-labs-2016", 
-            "text": "HackRF: RC Car  rubber ducky: Empire on a ducky  rtl-sdr: ADS-B  Proxmark: Introduction  WiFi Pineapple: Rogue Captive Portal   Add some links here... deleteme", 
+            "text": "HackRF: RC Car  rubber ducky: Empire on a ducky  rtl-sdr: ADS-B  rtl-sdr: gqrx introduction  Proxmark: Introduction  WiFi Pineapple: Rogue Captive Portal   Add some links here... deleteme", 
             "title": "SAINTCON HHV Labs 2016"
         }, 
         {
@@ -64,6 +64,51 @@
             "location": "/walkthroughs/ads-b/#additional-tools", 
             "text": "FlightAware  and  flightradar24  are ADS-B tracking sites driven by community data.  You can setup a system (pi, whatever) to receive broadcasts and share that data through these services.", 
             "title": "Additional tools"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/", 
+            "text": "gqrx introduction\n\n\nGoals\n\n\nRequired Software\n\n\n\n\ngqrx\n\n\n\n\nWalkthrough\n\n\ngqrx basics\n\n\nMake sure the \nrtl-sdr\n is plugged in to a USB port, then run\n\ngqrx -e\n (the \n-e\n means you want to edit settings).\n\n\nThis will pop up a window to select which kind of SDR you are using\n\n\n\n\nIn the Device field, choose the \nRealtek SD\n option for the devices we have at the conference\n\n\nSet Input Rate to an appropriate vaule (higher will cover more of the band)\n\n\nClick OK\n\n\n\n\nNow, tune the receiver to somewhere you will be able to see the frequency you\nare interested in and press the button in the top left that looks like a play\nbutton (or a power button, depending on the version of gqrx).  To tune, scroll\nthe mouse wheel with the mouse cursor over the digit you want to\nchange on the frequency display.  The red line is where we are tuned to (for\npurposes of demodulation), the light dotted line in the center of the waveform\ndisplay is the center frequency that the hackrf is tuned to.  On the right pane\nin the 'Receiver Options' pane, you will see an offset from the center\nfrequency.\n\n\nfind an FM radio broadcast\n\n\n\n\nmake sure your antenna is an appropriate length\n\n\nchoose \nWFM(mono)\n for demodulation on the right\n\n\nTune to somewhere between 88 and 108 MHz\n\n\n\n\n\n\nThis is an example of the lack of radio stations available in Cache Valley.  This is from a HackRF tuned to 94.000 MHz, the receiver is tuned 3.5 MHz above that and listening to 97.5 MHz demodulated as WFM(mono).  \n\n\nChallenge\n\n\nSee if you can find some brodcasts that are using a different modulation.\n\n\nAdditional Information", 
+            "title": "rtl-sdr: gqrx introduction"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#gqrx-introduction", 
+            "text": "", 
+            "title": "gqrx introduction"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#goals", 
+            "text": "", 
+            "title": "Goals"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#required-software", 
+            "text": "gqrx", 
+            "title": "Required Software"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#walkthrough", 
+            "text": "", 
+            "title": "Walkthrough"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#gqrx-basics", 
+            "text": "Make sure the  rtl-sdr  is plugged in to a USB port, then run gqrx -e  (the  -e  means you want to edit settings).  This will pop up a window to select which kind of SDR you are using   In the Device field, choose the  Realtek SD  option for the devices we have at the conference  Set Input Rate to an appropriate vaule (higher will cover more of the band)  Click OK   Now, tune the receiver to somewhere you will be able to see the frequency you\nare interested in and press the button in the top left that looks like a play\nbutton (or a power button, depending on the version of gqrx).  To tune, scroll\nthe mouse wheel with the mouse cursor over the digit you want to\nchange on the frequency display.  The red line is where we are tuned to (for\npurposes of demodulation), the light dotted line in the center of the waveform\ndisplay is the center frequency that the hackrf is tuned to.  On the right pane\nin the 'Receiver Options' pane, you will see an offset from the center\nfrequency.", 
+            "title": "gqrx basics"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#find-an-fm-radio-broadcast", 
+            "text": "make sure your antenna is an appropriate length  choose  WFM(mono)  for demodulation on the right  Tune to somewhere between 88 and 108 MHz    This is an example of the lack of radio stations available in Cache Valley.  This is from a HackRF tuned to 94.000 MHz, the receiver is tuned 3.5 MHz above that and listening to 97.5 MHz demodulated as WFM(mono).", 
+            "title": "find an FM radio broadcast"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#challenge", 
+            "text": "See if you can find some brodcasts that are using a different modulation.", 
+            "title": "Challenge"
+        }, 
+        {
+            "location": "/walkthroughs/gqrx-introduction/#additional-information", 
+            "text": "", 
+            "title": "Additional Information"
         }, 
         {
             "location": "/walkthroughs/empire-ducky/", 

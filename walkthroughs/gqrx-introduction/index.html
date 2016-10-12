@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://saintconhhv.github.io/HHVLabs/walkthroughs/hackrf-rc-car/">
+        <link rel="canonical" href="https://saintconhhv.github.io/HHVLabs/walkthroughs/gqrx-introduction/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>HackRF: RC Car - HHVLabs</title>
+	<title>rtl-sdr: gqrx introduction - HHVLabs</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -72,8 +72,8 @@
 
         
             
-<li >
-    <a href="../gqrx-introduction/">rtl-sdr: gqrx introduction</a>
+<li class="active">
+    <a href="./">rtl-sdr: gqrx introduction</a>
 </li>
 
         
@@ -84,8 +84,8 @@
 
         
             
-<li class="active">
-    <a href="./">HackRF: RC Car</a>
+<li >
+    <a href="../hackrf-rc-car/">HackRF: RC Car</a>
 </li>
 
         
@@ -131,12 +131,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../empire-ducky/">
+                    <a rel="next" href="../ads-b/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../proxmark/">
+                    <a rel="prev" href="../empire-ducky/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -159,7 +159,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#controlling-an-rc-car-with-hackrf">Controlling an RC Car with HackRF</a></li>
+        <li class="main active"><a href="#gqrx-introduction">gqrx introduction</a></li>
         
             <li><a href="#goals">Goals</a></li>
         
@@ -176,53 +176,42 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="controlling-an-rc-car-with-hackrf">Controlling an RC Car with HackRF</h2>
+<h2 id="gqrx-introduction">gqrx introduction</h2>
 <h3 id="goals">Goals</h3>
 <h3 id="required-software">Required Software</h3>
 <ul>
 <li><a href="../../software-2016/#gqrx">gqrx</a></li>
-<li><a href="../../software-2016/#inspectrum">inspectrum</a></li>
-<li><a href="../../software-2016/#rf-car">rf-car</a></li>
 </ul>
 <h3 id="walkthrough">Walkthrough</h3>
-<h4 id="whats-the-frequency-kenneth">What's the Frequency, Kenneth?</h4>
-<p>The first thing we need to know is what frequency your chosen rf car uses.
-Some devices will have a label to get you close.  Another option would be to
-<a href="https://www.fcc.gov/general/fcc-id-search-page">look up the FCC ID</a> to find
-the band it runs in.</p>
-<p>Once you have an idea of where it runs, we need the exact frequency.  I used
-<a href="../gqrx.dk">gqrx</a>, since is relatively simple and included in debian-based
-distributions.</p>
-<p>Make sure the HackRF is plugged in to a USB port with lights on, then run
+<h4 id="gqrx-basics">gqrx basics</h4>
+<p>Make sure the <a href="../rtl-sdr.com">rtl-sdr</a> is plugged in to a USB port, then run
 <code>gqrx -e</code> (the <code>-e</code> means you want to edit settings).</p>
-<p><img alt="gqrx - Configure I/O devices" src="../img/gqrx-configure-io.png" /></p>
+<p>This will pop up a window to select which kind of SDR you are using</p>
 <ol>
-<li>In the Device field, choose the HackRF</li>
+<li>In the Device field, choose the <code>Realtek SD</code> option for the devices we have at the conference</li>
 <li>Set Input Rate to an appropriate vaule (higher will cover more of the band)</li>
 <li>Click OK</li>
 </ol>
 <p>Now, tune the receiver to somewhere you will be able to see the frequency you
-are interested in and press the button that looks like a 'play' button.  To
-tune, scroll the mouse wheel with the mouse cursor over the digit you want to
+are interested in and press the button in the top left that looks like a play
+button (or a power button, depending on the version of gqrx).  To tune, scroll
+the mouse wheel with the mouse cursor over the digit you want to
 change on the frequency display.  The red line is where we are tuned to (for
 purposes of demodulation), the light dotted line in the center of the waveform
 display is the center frequency that the hackrf is tuned to.  On the right pane
 in the 'Receiver Options' pane, you will see an offset from the center
 frequency.</p>
+<h4 id="find-an-fm-radio-broadcast">find an FM radio broadcast</h4>
+<ol>
+<li>make sure your antenna is an appropriate length</li>
+<li>choose <code>WFM(mono)</code> for demodulation on the right</li>
+<li>Tune to somewhere between 88 and 108 MHz</li>
+</ol>
 <p><img alt="gqrx - FM - 97.5 MHz" src="../img/gqrx-receiver-97500000.jpg" /></p>
-<p>This is an example of the lack of radio stations available in Cache Valley.  The HackRF is tuned to 94.000 MHz, the receiver is tuned 3.5 MHz above that and listening to 97.5 MHz demodulated as WFM(mono).  </p>
-<p>To find your frequency, press and hold one of the controls on the remote and see if you see it appear in the waterfall display.  If you click in the waterfall display, it will tune to that frequency.  To get a better view of your current frequency, go to the FFT Settings tab on the right panel and increase the zoom.</p>
-<h4 id="how-does-this-thing-work">How does this thing work?</h4>
-<p>Now that you know the frequency, you can get a capture of the output from your remote.  Go to Tools -&gt; I/Q Recorder and record a sample.  From here, you could just replay the recorded sample and control your car.</p>
-<p>Now, let's get a closer look.  Let's open the file in <a href="https://github.com/miek/inspectrum">inspectrum</a>.  Run <code>inspectrum &lt;path/to/file.raw&gt;</code>.  The vertical axis is frequency relative to the center frequency, the horizontal axis is time.  Scroll to the right until you find your signal.  Notice that the signal is not continuous.  Zoom in so you can comfortably see where the gaps are.  Now, check the 'enable cursors' box and highlight a gap.  Now, increase the number of symbols and adjust the end to get a more accurate measurement.  Here is how mine looked:</p>
-<p><img alt="inspectrum - rf control signal" src="../img/inspectrum-rf-signal.jpg" /></p>
-<p>In this example, the symbol rate is 1875 symbols/second, each symbol taking 533 microseconds.</p>
-<p>If you are really ambitious, from this point you can now reverse-engineer the protocol (ie. see what the pattern is for each of the controls).  It would be a really good learning experience for you.  To save time, however, we will look at the end result from someone who has done it for us.</p>
-<p>Run <code>rf-car -f &lt;determined_frequency_in_hz&gt;</code>.  The default frequency is 40684300 which is around 40.7 MHz.</p>
+<p>This is an example of the lack of radio stations available in Cache Valley.  This is from a HackRF tuned to 94.000 MHz, the receiver is tuned 3.5 MHz above that and listening to 97.5 MHz demodulated as WFM(mono).  </p>
 <h3 id="challenge">Challenge</h3>
-<p>Do you (or does someone near you) have a key fob for their car?  Your mission, should you choose to accept it, is to find the frequency and the symbol rate of the transmitter.</p>
-<h3 id="additional-information">Additional Information</h3>
-<p>The <a href="https://github.com/rgerganov/rf-car">rf-car</a> repo has a lot of interesting information, as does the <a href="https://github.com/scateu/gr-remotecar">gr-remotecar</a> repo.  You could also try your favorite search engine.</p></div>
+<p>See if you can find some brodcasts that are using a different modulation.</p>
+<h3 id="additional-information">Additional Information</h3></div>
         </div>
 
         <footer class="col-md-12">
